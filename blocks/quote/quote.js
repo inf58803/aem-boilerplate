@@ -1,4 +1,4 @@
-import { fetchPlaceholders } from "../../scripts/aem";
+import { fetchPlaceholders } from "../../scripts/aem.js";
 export default async function decorate(block) {
     const placeholders = await fetchPlaceholders();
     if(placeholders.quote_suffix) {
