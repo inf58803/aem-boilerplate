@@ -1,10 +1,12 @@
 import { fetchPlaceholders } from "../../scripts/aem.js";
 export default async function decorate(block) {
+    console.log('quote loaded');
     const placeholders = await fetchPlaceholders();
-    if(placeholders.quote_suffix) {
+    console.log('loaded placeholders',placeholders);
+    if(placeholders.quoteSuffix) {
         const suffix = document.createElement('div');
-        suffix.className='quote_suffix';
-        suffix.textContent= placeholders.quote_suffix;
+        suffix.className='quoteSuffix';
+        suffix.textContent= placeholders.quoteSuffix;
         block.appendChild(suffix);
     }   
 }
